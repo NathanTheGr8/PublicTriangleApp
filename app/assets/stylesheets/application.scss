@@ -1,0 +1,36 @@
+@import "materialize/components/color";
+@import "materialize";
+
+* {
+    font-family: Montserrat;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+}
+
+a.navbar-font-white {
+    color: #fff;
+}
+
+footer.oldrose-background, nav.oldrose-background {
+    background-color: #990033
+}
+
+p.indent {
+    text-indent: 50px;
+}
+
+div.overlay {
+   background:transparent;
+   position:relative;
+   width:480px;
+   height:360px; /* your iframe height */
+   top:360px;  /* your iframe height */
+   margin-top:-360px;  /* your iframe height */
+}

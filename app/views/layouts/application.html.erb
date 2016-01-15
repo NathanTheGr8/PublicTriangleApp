@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <title>Triangle Fraternity</title>
+
+    <link rel="icon" href="http://illinoistriangle.com/favicon.ico">
+
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Import Main Font-->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+</header>
+<main>
+    <body>
+        <!-- Navbar -->
+        <div class="navbar-fixed">
+            <nav class="oldrose-background">
+              <div class="nav-wrapper">
+                  <a href="/" class="brand-logo">Triangle Fraternity</a>
+                  <ul id="nav-mobile" class="right table-of-contents hide-on-med-and-down">
+                      <li><a class="navbar-font-white" href="#about">About</a></li>
+                      <li><a class="navbar-font-white" href="#members">Members</a></li>
+                      <li><a class="navbar-font-white" href="#events">Events</a></li>
+                      <li><a class="navbar-font-white" href="#scholarship">Scholarship</a></li>
+                      <li><a class="navbar-font-white" href="#contact">Contact</a></li>
+                 </ul>
+                </div>
+              </div>
+            </nav>
+        </div>
+
+    <%= yield %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    </body>
+</main>
+
+<footer class="oldrose-background page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Triangle Fraternity | Illinois Chapter</h5>
+        <a href="http://triangle.org/">National Triangle Website</a>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Brother Search</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">President</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">External Director</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Social Chair</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2016
+    <a class="grey-text text-lighten-4 right" href="#!">Presented by the Brothers of Triangle</a>
+    </div>
+  </div>
+</footer>
+</html>
