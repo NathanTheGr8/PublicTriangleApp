@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: PublicTriangleApp_production
-  username: PublicTriangleApp
-  password: <%= ENV['PUBLICTRIANGLEAPP_DATABASE_PASSWORD'] %>
+  username: illinoistriangle  # PublicTriangleApp
+  password: #<%= ENV['PUBLICTRIANGLEAPP_DATABASE_PASSWORD'] %>
