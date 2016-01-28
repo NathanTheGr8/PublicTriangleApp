@@ -1,29 +1,36 @@
-<div class="container">
-    <h2>Brother Directory</h2>
+<div ng-app="DirectoryApp">
+    <div ng-controller="DirectoryController" ng-init="init()">
+        <div class="container">
+            <h2>Brother Directory</h2>
 
-    <nav class="oldrose-background">
-      <div class="nav-wrapper">
-        <form>
-          <div class="input-field">
-            <input id="search" type="search" required>
-            <label for="search"><i class="material-icons">search</i></label>
-            <i class="material-icons">close</i>
-          </div>
-        </form>
-      </div>
-    </nav>
-    <table class="striped">
-        <thead>
-            <th>First Name</th>
-            <th>Last Name</th>
-        </thead>
-        <tbody>
+            <nav class="oldrose-background">
+              <div class="nav-wrapper">
+                <form>
+                  <div class="input-field">
+                    <input autocomplete="off" id="search" type="search" ng-model="search" ng-click="searchClear()" ng-change="searchChange()" required>
+                    <label for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons" ng-click="searchReset()">close</i>
+                  </div>
+                </form>
+              </div>
+            </nav>
+
             <% @brothers.each do |bro| %>
-            <tr>
-                <td><%= bro.first %></td>
-                <td><%= bro.last %></td>
-            </tr>
+                <div class="brother" data-item-first="<%= bro.first %>" data-item-last="<%= bro.last %>"/>
             <% end %>
-        </tbody>
-    </table>
-</div>
+
+            <table class="striped">
+                <thead>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="brother in getVisibleBrothers()">
+                        <td> {{brother.first}} </td>
+                        <td> {{brother.last}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>

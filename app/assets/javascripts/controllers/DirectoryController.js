@@ -6,6 +6,7 @@ DirectoryApp.controller("DirectoryController", function($scope) {
 
     $scope.init = function()
     {
+        console.log("Initing Directory");
         var elements = document.getElementsByClassName("brother");
         $scope.brothers = [];
         for(var i = 0; i < elements.length; i++)
@@ -22,8 +23,9 @@ DirectoryApp.controller("DirectoryController", function($scope) {
 
     $scope.search = "Search";
 
-    $scope.searchChanged = function()
+    $scope.searchChange = function()
     {
+        console.log("SearchChange");
         var searchTerm = search.value.toLowerCase();
         if(searchTerm.length > 0)
         {
@@ -45,18 +47,21 @@ DirectoryApp.controller("DirectoryController", function($scope) {
 
     $scope.searchClear = function()
     {
+        console.log("search clear");
         search.value = "";
-    }
+    };
 
     $scope.searchReset = function()
     {
+        console.log("search reset");
         search.value = "Search";
         $scope.visible_brothers = $scope.brothers.slice();
-    }
+    };
 
     $scope.getVisibleBrothers = function()
     {
+        console.log("visible brothers");
         return $scope.visible_brothers;
-    }
+    };
 
 });
