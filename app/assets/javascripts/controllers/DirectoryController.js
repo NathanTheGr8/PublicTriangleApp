@@ -1,4 +1,4 @@
-DirectoryApp.controller("DirectoryController", function($scope) {
+DirectoryApp.controller("DirectoryController", ['$scope', function($scope) {
 
     function stringStartsWith (string, prefix) {
         return string.slice(0, prefix.length) == prefix;
@@ -64,4 +64,4 @@ DirectoryApp.controller("DirectoryController", function($scope) {
         return $scope.visible_brothers;
     };
 
-});
+}]);
