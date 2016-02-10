@@ -5,4 +5,22 @@ $(document).ready ->
     $('.modal-trigger').leanModal()
     $('.dropdown-button').dropdown()
     $('.parallax').parallax()
-  return
+  
+
+
+# smooth scrolling code
+# stole it from http://codepen.io/MyXoToD/post/look-ma-such-a-smooth-scroll
+$(document).on "click", "a", (e) ->
+  url = window.location.pathname
+  current_page = url.substring(url.lastIndexOf('/') + 1)
+  link = $(this).attr("href").split("#")[0]
+  anchor = $(this).attr("href").split("#")[1]
+  if anchor
+    if current_page is link
+      e.preventDefault()
+      if anchor is "top"
+        offset = 0
+      else
+        offset = $("#" + anchor).offset().top
+      $("html,body").animate
+        scrollTop: offset
