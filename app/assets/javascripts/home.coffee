@@ -21,6 +21,6 @@ $(document).on "click", "a", (e) ->
       if anchor is "top"
         offset = 0
       else
-        offset = $("#" + anchor).offset().top
+        offset = $("#" + anchor).offset().top-50
       $("html,body").animate
         scrollTop: offset
