@@ -1,6 +1,13 @@
 @import "materialize/components/color";
 @import "materialize";
 
+$oldrose: #990033;
+$xs: 320px;
+$sm: 480px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
 * {
     font-family: Montserrat;
 }
@@ -13,13 +20,24 @@ body {
 main {
     flex: 1 0 auto;
 }
+a {
+  color: darken($oldrose, 20%);
+  &:hover {
+    color: darken($oldrose, 10%);
+  }
+  &.navbar-font-white {
+    color: #111;
+  }
+  @media(min-width: $lg) {
+    &.navbar-font-white {
+      color: #fff;
+    }
+  }
 
-a.navbar-font-white {
-    color: #fff;
 }
 
 footer.oldrose-background, nav.oldrose-background {
-    background-color: #990033
+    background-color: $oldrose;
 }
 
 p.indent {
@@ -34,3 +52,6 @@ div.overlay {
    top:360px;  /* your iframe height */
    margin-top:-360px;  /* your iframe height */
 }
+
+
+

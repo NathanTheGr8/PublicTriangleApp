@@ -1,11 +1,19 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
+# $(document).ready ->
+#     $('.modal-trigger').leanModal()
+#     $('.dropdown-button').dropdown()
+#     $('.parallax').parallax()
+#     $('.scrollspy').scrollSpy()
+
 $(document).ready ->
-    $('.modal-trigger').leanModal()
-    $('.dropdown-button').dropdown()
-    $('.parallax').parallax()
-  
+  $('.modal-trigger').leanModal()
+  $('.dropdown-button').dropdown()
+  $('.button-collapse').sideNav();
+  $('.parallax').parallax()
+  $('.scrollspy').scrollSpy()
+
 
 
 # smooth scrolling code
@@ -15,12 +23,13 @@ $(document).on "click", "a", (e) ->
   current_page = url.substring(url.lastIndexOf('/') + 1)
   link = $(this).attr("href").split("#")[0]
   anchor = $(this).attr("href").split("#")[1]
+  navbar_height = 50
   if anchor
     if current_page is link
       e.preventDefault()
       if anchor is "top"
         offset = 0
       else
-        offset = $("#" + anchor).offset().top-50
+        offset = $("#" + anchor).offset().top-navbar_height
       $("html,body").animate
         scrollTop: offset
